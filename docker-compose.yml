@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mongodb-database:
+    build: .
+    container_name: 'gastos-mongodb'
+    environment:
+        - MONGO_INITDB_DATABASE=gastosdb
+        - MONGO_INITDB_ROOT_USERNAME=gastos
+        - MONGO_INITDB_ROOT_PASSWORD=gastos
+    volumes:
+        - "./boot/scripts:/docker-entrypoint-initdb.d"
+    ports:
+      - 27107:27017
