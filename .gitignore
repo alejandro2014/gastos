@@ -1,1 +1,4 @@
 boot/files/
+._*
+.DS_Store
+*.csv
