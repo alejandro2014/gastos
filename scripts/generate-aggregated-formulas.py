@@ -12,8 +12,8 @@ def generate_formula(month, year, row, concept):
 
     return formula
 
-def write_file(csv_lines):
-    with open('output.csv', mode = 'w') as file:
+def write_file(file_name, csv_lines):
+    with open(file_name, mode = 'w') as file:
         for line in csv_lines:
             file.write(line)
             file.write('\n')
@@ -40,4 +40,4 @@ for rownum in range(1, max_rows):
 
     csv_lines.append(csv_line)
 
-write_file(csv_lines)
+write_file('output' + month + '.csv', csv_lines)
